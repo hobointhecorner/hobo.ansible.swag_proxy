@@ -1,0 +1,10 @@
+---
+allow_duplicates: true
+
+galaxy_info:
+  role_name: hobo.ansible.swag_proxy
+  author: hobointhecorner
+  description: Configure a SWAG proxy module file
+  license: MPL-2.0
+
+  galaxy_tags: []
