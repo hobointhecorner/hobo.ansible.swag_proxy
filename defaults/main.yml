@@ -1,5 +1,0 @@
----
-swag_module_dir: /srv/swag/{{ swag_server_domain }}/config/nginx
-swag_owner: swag
-swag_group: swag
-swag_mode: "664"
