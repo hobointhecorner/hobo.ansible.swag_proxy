@@ -44,7 +44,7 @@ server {
 
     }
 
-    location ~ (/{{ starr_server_type|mandatory }})?/api {
+    location ~ (/{{ swag_starr_server_type|mandatory }})?/api {
         include /config/nginx/proxy.conf;
         include /config/nginx/resolver.conf;
         set $upstream_app {{ swag_module_dest_hostname|mandatory }};

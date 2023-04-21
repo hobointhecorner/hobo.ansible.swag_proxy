@@ -7,61 +7,67 @@ argument_specs:
       #
 
       swag_server_domain:
-        description: The domain of the server being configured
         type: str
         required: true
+        description: The domain of the server being configured
 
       swag_module_name:
-        description: The name of the module to use, chosen from the available available SWAG proxy configuration files in `templates/`
         type: str
         required: true
+        description: The name of the module to use, chosen from the available available SWAG proxy configuration files in `templates/`
 
       swag_module_dest_hostname:
-        description: Destination host shortname or IP address of the proxied service
         type: str
         required: true
+        description: Destination host shortname or IP address of the proxied service
 
       swag_module_dest_port:
-        description: Destination port of the proxied service
         type: str
         required: true
+        description: Destination port of the proxied service
 
       #
       # OPTIONAL
       #
 
       swag_module_type:
-        description: The type of proxy to be created, chosen from the availabile SWAG proxy configuration files in `templates/`
         type: str
         default: subdomain
+        description: The type of proxy to be created, chosen from the availabile SWAG proxy configuration files in `templates/`
         choices:
           - subdomain
           - subdirectory
 
       swag_module_dir:
-        description: Directory in which nginx proxy configuration files should be stored
         type: str
         default: /srv/swag/config/nginx
+        description: Directory in which nginx proxy configuration files should be stored
 
       swag_owner:
-        description: Owner of the configuration file(s) created
         type: str
         default: swag
+        description: Owner of the configuration file(s) created
 
       swag_group:
-        description: Permission group of the configuration file(s) created
         type: str
         default: swag
+        description: Permission group of the configuration file(s) created
 
       swag_mode:
-        description: chmod octal mode of the configuration file(s) created
         type: str
         default: "664"
+        description: chmod octal mode of the configuration file(s) created
 
       swag_module_subdomain:
+        type: str
         description: The subdomain of the proxy to be created.  Required when `swag_module_type` is `subdomain`
-        type: str
 
-      starr_server_type:
-        description: Server type (radarr, sonarr, etc) of the proxied Starr service (Required when )
+      swag_module_subdirectory:
         type: str
+        description: The relative path of the proxy to be created (with no leading `/`).  Required when `swag_module_type` is `subdirectory`
+
+      swag_starr_server_type:
+        type: str
+        description: |
+          Server type (radarr, sonarr, etc) of the proxied Starr service (Required when `swag_module_name` is `starr`)
+          This is used to set the API endpoint of the proxy, so if you're using forked services (for example, jellyseerr) use the API endpoint of the forked project (using the same example, `overseerr`)
