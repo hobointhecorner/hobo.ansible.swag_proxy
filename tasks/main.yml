@@ -3,7 +3,7 @@
   become: yes
   notify: Reload swag service
   template:
-    src: "{{ swag_module_type }}.conf.j2"
+    src: "{{ swag_module_name }}.{{ swag_module_type }}.conf.j2"
     dest: "{{ swag_module_dir }}/{{ swag_module_subdomain|mandatory }}.{{ swag_server_domain }}"
     owner: "{{ swag_owner }}"
     group: "{{ swag_group }}"

@@ -8,4 +8,4 @@ Proxy configurations to be used with [hobo.ansible.swag](https://github.com/hobo
 
 ## Parameters
 See [argument_specs.yml](./meta/argument_specs.yml) for available parameters
-See [templates](./templates/) for a list of available `swag_module_type`s
+See [templates](./templates/) for a list of available `swag_module_name`s and `swag_module_type`s

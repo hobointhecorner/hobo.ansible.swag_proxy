@@ -11,8 +11,8 @@ argument_specs:
         type: str
         required: true
 
-      swag_module_type:
-        description: The type of proxy to be used, in the form of `service`.`type` where `service is an available SWAG proxy configuration file and `type` is either `subdomain` or `subdirectory`
+      swag_module_name:
+        description: The name of the module to use, chosen from the available available SWAG proxy configuration files in `templates/`
         type: str
         required: true
 
@@ -30,10 +30,18 @@ argument_specs:
       # OPTIONAL
       #
 
+      swag_module_type:
+        description: The type of proxy to be created, chosen from the availabile SWAG proxy configuration files in `templates/`
+        type: str
+        default: subdomain
+        choices:
+          - subdomain
+          - subdirectory
+
       swag_module_dir:
         description: Directory in which nginx proxy configuration files should be stored
         type: str
-        default: /srv/swag/{{ swag_server_domain }}/config/nginx
+        default: /srv/swag/config/nginx
 
       swag_owner:
         description: Owner of the configuration file(s) created
@@ -51,7 +59,7 @@ argument_specs:
         default: "664"
 
       swag_module_subdomain:
-        description: The subdomain of the proxy to be created.  Required when `swag_module_type` is `*.subdomain`
+        description: The subdomain of the proxy to be created.  Required when `swag_module_type` is `subdomain`
         type: str
 
       starr_server_type:
