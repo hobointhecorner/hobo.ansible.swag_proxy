@@ -1,0 +1,6 @@
+---
+swag_module_type: subdomain
+swag_module_dir: /srv/swag/config/nginx
+swag_owner: swag
+swag_group: swag
+swag_mode: "664"
