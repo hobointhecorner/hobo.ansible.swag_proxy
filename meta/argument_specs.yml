@@ -64,3 +64,4 @@ argument_specs:
 
       starr_server_type:
         description: Server type (radarr, sonarr, etc) of the proxied Starr service (Required when )
+        type: str
