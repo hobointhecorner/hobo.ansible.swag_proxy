@@ -15,7 +15,7 @@ server {
     listen 443 ssl;
     listen [::]:443 ssl;
 
-    server_name {{ swag_module_subdomain|mandatory }}.*;
+    server_name {{ swag_module_subdomain | mandatory }}.*;
 
     include /config/nginx/ssl.conf;
 
@@ -46,8 +46,8 @@ server {
 
         include /config/nginx/proxy.conf;
         include /config/nginx/resolver.conf;
-        set $upstream_app {{ swag_module_dest_hostname|mandatory }};
-        set $upstream_port {{ swag_module_dest_port|default('8123', true) }};
+        set $upstream_app {{ swag_module_dest_hostname | mandatory }};
+        set $upstream_port {{ swag_module_dest_port | default('8123', true) }};
         set $upstream_proto http;
         proxy_pass $upstream_proto://$upstream_app:$upstream_port;
 
@@ -56,8 +56,8 @@ server {
     location ~ ^/(api|local|media)/ {
         include /config/nginx/proxy.conf;
         include /config/nginx/resolver.conf;
-        set $upstream_app {{ swag_module_dest_hostname|mandatory }};
-        set $upstream_port {{ swag_module_dest_port|default('8123', true) }};
+        set $upstream_app {{ swag_module_dest_hostname | mandatory }};
+        set $upstream_port {{ swag_module_dest_port | default('8123', true) }};
         set $upstream_proto http;
         proxy_pass $upstream_proto://$upstream_app:$upstream_port;
     }
