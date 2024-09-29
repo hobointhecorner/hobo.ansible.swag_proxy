@@ -66,6 +66,11 @@ argument_specs:
         type: str
         description: The relative path of the proxy to be created (with no leading `/`).  Required when `swag_module_type` is `subdirectory`
 
+      swag_module_upstream_protocol:
+        type: str
+        default: http
+        description: Determines whether to use http or https
+
       swag_starr_server_type:
         type: str
         description: |

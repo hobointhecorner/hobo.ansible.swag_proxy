@@ -1,6 +1,6 @@
 ---
 - name: Template {{ swag_module_subdomain }} module file
-  become: yes
+  become: true
   notify: Reload swag service
   tags:
     - swag

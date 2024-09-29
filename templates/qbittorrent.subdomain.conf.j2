@@ -39,7 +39,7 @@ server {
         include /config/nginx/resolver.conf;
         set $upstream_app {{ swag_module_dest_hostname | mandatory }};
         set $upstream_port {{ swag_module_dest_port | default('8080', true) }};
-        set $upstream_proto http;
+        set $upstream_proto {{ swag_module_upstream_protocol | mandatory }};
         proxy_pass $upstream_proto://$upstream_app:$upstream_port;
 
         proxy_set_header Referer '';
@@ -52,7 +52,7 @@ server {
         include /config/nginx/resolver.conf;
         set $upstream_app {{ swag_module_dest_hostname | mandatory }};
         set $upstream_port {{ swag_module_dest_port | default('8080', true) }};
-        set $upstream_proto http;
+        set $upstream_proto {{ swag_module_upstream_protocol | mandatory }};
         proxy_pass $upstream_proto://$upstream_app:$upstream_port;
 
         rewrite /qbittorrent(.*) $1 break;
@@ -67,7 +67,7 @@ server {
         include /config/nginx/resolver.conf;
         set $upstream_app {{ swag_module_dest_hostname | mandatory }};
         set $upstream_port {{ swag_module_dest_port | default('8080', true) }};
-        set $upstream_proto http;
+        set $upstream_proto {{ swag_module_upstream_protocol | mandatory }};
         proxy_pass $upstream_proto://$upstream_app:$upstream_port;
 
         rewrite /qbittorrent(.*) $1 break;
@@ -82,7 +82,7 @@ server {
         include /config/nginx/resolver.conf;
         set $upstream_app {{ swag_module_dest_hostname | mandatory }};
         set $upstream_port {{ swag_module_dest_port | default('8080', true) }};
-        set $upstream_proto http;
+        set $upstream_proto {{ swag_module_upstream_protocol | mandatory }};
         proxy_pass $upstream_proto://$upstream_app:$upstream_port;
 
         rewrite /qbittorrent(.*) $1 break;
@@ -97,7 +97,7 @@ server {
         include /config/nginx/resolver.conf;
         set $upstream_app {{ swag_module_dest_hostname | mandatory }};
         set $upstream_port {{ swag_module_dest_port | default('8080', true) }};
-        set $upstream_proto http;
+        set $upstream_proto {{ swag_module_upstream_protocol | mandatory }};
         proxy_pass $upstream_proto://$upstream_app:$upstream_port;
 
         rewrite /qbittorrent(.*) $1 break;
@@ -112,7 +112,7 @@ server {
         include /config/nginx/resolver.conf;
         set $upstream_app {{ swag_module_dest_hostname | mandatory }};
         set $upstream_port {{ swag_module_dest_port | default('8080', true) }};
-        set $upstream_proto http;
+        set $upstream_proto {{ swag_module_upstream_protocol | mandatory }};
         proxy_pass $upstream_proto://$upstream_app:$upstream_port;
 
         rewrite /qbittorrent(.*) $1 break;
@@ -127,7 +127,7 @@ server {
         include /config/nginx/resolver.conf;
         set $upstream_app {{ swag_module_dest_hostname | mandatory }};
         set $upstream_port {{ swag_module_dest_port | default('8080', true) }};
-        set $upstream_proto http;
+        set $upstream_proto {{ swag_module_upstream_protocol | mandatory }};
         proxy_pass $upstream_proto://$upstream_app:$upstream_port;
 
         rewrite /qbittorrent(.*) $1 break;
