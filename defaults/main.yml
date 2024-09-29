@@ -4,3 +4,4 @@ swag_module_dir: /srv/swag/config/nginx
 swag_owner: swag
 swag_group: swag
 swag_mode: "664"
+swag_module_upstream_protocol: http
